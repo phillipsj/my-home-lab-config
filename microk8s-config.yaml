@@ -1,0 +1,16 @@
+version: 0.1.0
+addons:
+  - name: dns
+  - name: rbac
+  - name: ingress
+  - name: hostpath-storage
+  - name: cert-manager
+  - name: dashboard
+  - name: registry
+  - name: metallb
+    args: [192.168.1.231-192.168.1.245]
+extraKubeAPIServerArgs:
+  --authorization-mode: RBAC,Node
+extraKubeletArgs:
+  --cluster-dns: 10.152.183.10
+  --cluster-domain: cluster.local
