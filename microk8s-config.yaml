@@ -1,4 +1,8 @@
 version: 0.1.0
+addonRepositories:
+  - name: phillipsj
+    url: https://github.com/phillipsj/microk8s-addons
+    reference: main
 addons:
   - name: dns
   - name: rbac
@@ -9,6 +13,8 @@ addons:
   - name: registry
   - name: metallb
     args: [192.168.1.231-192.168.1.245]
+  - name: phillipsj/opentelemetry-operator
+  - name: phillipsj/openobserve
 extraKubeAPIServerArgs:
   --authorization-mode: RBAC,Node
 extraKubeletArgs:
